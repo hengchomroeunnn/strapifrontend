@@ -20,7 +20,6 @@ const REVIEWS = gql`
 export default function Homepage() {
   
   const {data, loading, error} = useQuery(REVIEWS)
-  console.log(data);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :/</p>;
 

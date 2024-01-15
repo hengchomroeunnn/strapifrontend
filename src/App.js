@@ -7,7 +7,7 @@ import Category from "./pages/Category";
 import { InMemoryCache, ApolloClient, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://strapizin-203511fa200d.herokuapp.com/graphql",
+  uri: process.env.REACT_APP_URL,
   cache: new InMemoryCache(),
 });
 
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/reviewdetail/:id' element={<ReviewDetail />} />
-          <Route path='/category/:id' element={<Category/>} />
+          <Route path='/category/:id' element={<Category />} />
         </Routes>
         <Footer />
       </div>
